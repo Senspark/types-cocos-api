@@ -1,0 +1,26 @@
+{
+    "description": "declaration file for cocos creator",
+    "version": "1.0.0",
+    "author": "senspark",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Senspark/types-cocos-api/issues"
+    },
+    "homepage": "https://github.com/Senspark/types-cocos-api",
+    "keywords": [
+        "cocos"
+    ],
+    "scripts": {
+        "prepare": "node_modules/dts-generator/bin/dts-generator --project . --out dist/index.d.ts"
+    },
+    "types": "dist/index.d.ts",
+    "name": "@senspark/types-cocos-api",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Senspark/types-cocos-api.git"
+    },
+    "devDependencies": {
+        "dts-generator": "^2.1.0",
+        "typescript": "^3.1.6"
+    }
+}
