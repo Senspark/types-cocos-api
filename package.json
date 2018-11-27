@@ -1,11 +1,12 @@
 {
     "description": "declaration file for cocos creator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "senspark",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/Senspark/types-cocos-api/issues"
     },
+    "main": "dist/index.js",
     "homepage": "https://github.com/Senspark/types-cocos-api",
     "keywords": [
         "cocos"
