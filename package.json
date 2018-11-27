@@ -14,7 +14,7 @@
         "prepare": "node_modules/dts-generator/bin/dts-generator --project . --out dist/index.d.ts"
     },
     "types": "dist/index.d.ts",
-    "name": "@senspark/types-cocos-api",
+    "name": "@senspark/cocos-api",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Senspark/types-cocos-api.git"
