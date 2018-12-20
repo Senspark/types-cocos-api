@@ -376,6 +376,43 @@ declare namespace cc {
         export { vec2, vec3, vec4, mat2, mat3, mat4 } from 'gl-matrix';
     }
 
+    namespace visibleRect {
+        function init(visibleRect: Rect): void;
+
+        /** Top left coordinate of the screen related to the game scene. */
+        const topLeft: Vec2;
+
+        /** Top right coordinate of the screen related to the game scene. */
+        const topRight: Vec2;
+
+        /** Top center coordinate of the screen related to the game scene. */
+        const top: Vec2;
+
+        /** Bottom left coordinate of the screen related to the game scene. */
+        const bottomLeft: Vec2;
+
+        /** Bottom right coordinate of the screen related to the game scene. */
+        const bottomRight: Vec2;
+
+        /** Bottom center coordinate of the screen related to the game scene. */
+        const bottom: Vec2;
+
+        /** Center coordinate of the screen related to the game scene. */
+        const center: Vec2;
+
+        /** Left center coordinate of the screen related to the game scene. */
+        const left: Vec2;
+
+        /** Right center coordinate of the screen related to the game scene. */
+        const right: Vec2;
+
+        /** Width of the screen. */
+        const width: number;
+
+        /** Height of the screen. */
+        const height: number;
+    }
+
     /** Version >= 2 */
     namespace AffineTransform {
         function fromMat4(out: AffineTransform, matrix: vmath.mat4): AffineTransform;
