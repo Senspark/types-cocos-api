@@ -346,6 +346,26 @@ declare namespace cc {
         const VERTEX_ATTRIB_TEX_COORDS: number;
     }
 
+    interface Director {
+        runSceneImmediate(
+            scene: Scene,
+            onBeforeLoadScene?: () => void,
+            onLaunched?: (error: Error, scene: Scene) => void);
+
+        loadScene(
+            sceneName: string,
+            onLaunched?: (error: Error, scene: Scene) => void);
+
+        preloadScene(
+            sceneName: string,
+            onProgress?: (completedCount: number, totalCount: number, item: any) => void,
+            onLoaded?: (error: Error, item: SceneAsset) => void);
+
+        preloadScene(
+            sceneName: string,
+            onLoaded?: (error: Error, item: SceneAsset) => void);
+    }
+
     interface Scene {
         _load(): void;
         _activate(active?: boolean): void;
