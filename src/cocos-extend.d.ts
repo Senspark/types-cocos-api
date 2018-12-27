@@ -346,6 +346,11 @@ declare namespace cc {
         const VERTEX_ATTRIB_TEX_COORDS: number;
     }
 
+    interface Scene {
+        _load(): void;
+        _activate(active?: boolean): void;
+    }
+
     class AssetLibrary {
         static loadAsset(uuid: string, callback: (error: string | null, asset: any | null) => void, options?: {}): void;
         static getLibUrlNoExt(uuid: string): string;
