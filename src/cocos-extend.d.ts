@@ -602,6 +602,11 @@ declare namespace cc {
         getWorldToNodeTransform(out?: cc.AffineTransform): cc.AffineTransform;
     }
 
+    interface ScrollView {
+        _registerEvent(): void;
+        _unregisterEvent(): void;
+    }
+
     interface PageView {
         _updatePageView(): void;
     }
