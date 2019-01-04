@@ -1262,6 +1262,12 @@ declare namespace cc {
             equals(matrix: Matrix4): boolean;
         }
     }
+
+    namespace profiler {
+        function isShowingStats(): boolean;
+        function hideStats(): void;
+        function showStats(): void;
+    }
 }
 
 declare namespace sp {
@@ -1376,4 +1382,65 @@ declare namespace sp {
 
         getCurrent(trackIndex: number): sp.spine.TrackEntry;
     }
+}
+
+declare namespace jsb {
+    function loadImage(filePath: string, callback: (info: any) => void): void;
+    function saveImageData(data: any, width: number, height: number, filePath: string): boolean;
+
+    class FileUtils {
+        static getInstance(): FileUtils;
+
+        isAbsolutePath(filePath: string): boolean;
+        isFileExist(filename: string): boolean;
+        isDirectoryExist(dirPath: string): boolean;
+
+        fullPathForFilename(filename: string): string;
+        fullPathFromRelativeFile(filename: string, relativeFile: string): string;
+
+        getFileSize(filePath: string): number;
+        getFileExtension(filePath: string): string;
+
+        listFiles(dirPath: string): string[];
+        listFilesRecursively(dirPath: string, files: string[]): void;
+
+        getStringFromFile(filename: string): string;
+        getDataFromFile(filename: string): any;
+        getValueMapFromFile(filename: string): any;
+        getValueVectorFromFile(filename: string): any;
+
+        writeToFile(dict: any, fullPath: string): boolean;
+        writeStringToFile(data: string, fullPath: string): boolean;
+        writeDataToFile(data: any, filePath: string): boolean;
+        writeValueVectorToFile(data: any, fullPath: string): boolean;
+        writeValueMapToFile(data: any, fullPath: string): boolean;
+
+        createDirectory(dirPath: string): boolean;
+
+        removeFile(filePath: string): boolean;
+        removeDirectory(dirPath: string): boolean;
+
+        loadFilenameLookupDictionaryFromFile(filename: string): void;
+
+        isPopupNotify(): boolean;
+        setPopupNotify(notify: boolean): void;
+
+        getDefaultResourceRootPath(): string;
+        setDefaultResourceRootPath(path: string): void;
+
+        getOriginalSearchPaths(): string[];
+
+        getSearchPaths(): string[];
+        setSearchPaths(searchPaths: string[]): void;
+        addSearchPath(path: string, front?: boolean): void;
+
+        getSearchResolutionsOrder(): string[];
+        setSearchResolutionsOrder(searchResolutionsOrder: string[]): void;
+        addSearchResolutionsOrder(order: string, front?: boolean): void;
+
+        getWritablePath(): string;
+        setWritablePath(writablePath: string): void;
+    }
+
+    const fileUtils: FileUtils;
 }
