@@ -1443,4 +1443,12 @@ declare namespace jsb {
     }
 
     const fileUtils: FileUtils;
+
+    namespace reflection {
+        /** For Android. */
+        function callStaticMethod(className: string, method: string, signature: string, ...params: any[]): void;
+
+        /** For iOS. */
+        function callStaticMethod(className: string, method: string, ...params: any[]): void;
+    }
 }
