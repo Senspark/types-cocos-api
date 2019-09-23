@@ -1065,6 +1065,10 @@ declare namespace cc {
                     _templates: any;
                     constructor(device: any, templates: any, chunks: any);
                     define(name: any, vert: any, frag: any, defines: any): void;
+
+                    /** Version >= 2.1.3 */
+                    define(shader: any): void;
+
                     getKey(name: string, defines: any): any;
                     getProgram(name: string, defines: any): gfx.Program;
                 }
