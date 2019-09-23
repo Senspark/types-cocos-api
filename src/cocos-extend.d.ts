@@ -748,6 +748,46 @@ declare namespace cc {
     namespace renderer {
         const _forward: renderEngine.ForwardRenderer;
 
+        class Pass {
+            constructor(name: string);
+
+            setCullMode(cullMode: number): void;
+
+            setBlend(
+                blendEq?: number,
+                blendSrc?: number,
+                blendDst?: number,
+                blendAlphaEq?: number,
+                blendSrcAlpha?: number,
+                blendDstAlpha?: number,
+                blendColor?: number): void;
+
+            setDepth(
+                depthTest?: boolean,
+                depthWrite?: boolean,
+                depthFunc?: number): void;
+
+            setStencilFront(
+                stencilFunc?: number,
+                stencilRef?: number,
+                stencilMask?: number,
+                stencilFailOp?: number,
+                stencilZFailOp?: number,
+                stencilZPassOp?: number,
+                stencilWriteMask?: number): void;
+
+            setStencilBack(
+                stencilFunc?: number,
+                stencilRef?: number,
+                stencilMask?: number,
+                stencilFailOp?: number,
+                stencilZFailOp?: number,
+                stencilZPassOp?: number,
+                stencilWriteMask?: number): void;
+
+            disableStencilTest(): void;
+        }
+
         namespace renderEngine {
             /** Version >= 2 */
             interface Camera { }
@@ -775,16 +815,7 @@ declare namespace cc {
                 destroy(): void;
             }
 
-            class Material extends Asset {
-                hash: string;
-                _texIds: any;
-                effect: renderer.Effect;
-                _effect: renderer.Effect;
-                _mainTech: renderer.Technique;
-                _texture: Texture2D | null;
-                constructor(persist?: boolean);
-                updateHash(): void;
-            }
+            class Material extends cc.Material { }
 
             class SpriteMaterial extends Material {
                 effect: any;
@@ -956,45 +987,7 @@ declare namespace cc {
                 function addStage(name: string): void;
                 function createIA(device: any, data: any): InputAssembler | null;
 
-                class Pass {
-                    constructor(name: string);
-
-                    setCullMode(cullMode: number): void;
-
-                    setBlend(
-                        blendEq?: number,
-                        blendSrc?: number,
-                        blendDst?: number,
-                        blendAlphaEq?: number,
-                        blendSrcAlpha?: number,
-                        blendDstAlpha?: number,
-                        blendColor?: number): void;
-
-                    setDepth(
-                        depthTest?: boolean,
-                        depthWrite?: boolean,
-                        depthFunc?: number): void;
-
-                    setStencilFront(
-                        stencilFunc?: number,
-                        stencilRef?: number,
-                        stencilMask?: number,
-                        stencilFailOp?: number,
-                        stencilZFailOp?: number,
-                        stencilZPassOp?: number,
-                        stencilWriteMask?: number): void;
-
-                    setStencilBack(
-                        stencilFunc?: number,
-                        stencilRef?: number,
-                        stencilMask?: number,
-                        stencilFailOp?: number,
-                        stencilZFailOp?: number,
-                        stencilZPassOp?: number,
-                        stencilWriteMask?: number): void;
-
-                    disableStencilTest(): void;
-                }
+                class Pass extends renderer.Pass { }
 
                 class Technique {
                     passes: Pass[];
@@ -1078,6 +1071,8 @@ declare namespace cc {
                 const chunks: any;
                 const templates: any;
             }
+
+            class Pass extends renderEngine.Pass { }
         }
     }
 
