@@ -628,6 +628,111 @@ declare namespace cc {
         static FLAG_FINAL: number;
     }
 
+    /** Version >= 2.1.3 */
+    namespace gfx {
+        /** Buffer usage. */
+        /** gl.STATIC_DRAW */
+        const USAGE_STATIC: number;
+        /** gl.DYNAMIC_DRAW */
+        const USAGE_DYNAMIC: number;
+        /** gl.STREAM_DRAW */
+        const USAGE_STREAM: number;
+
+        /** Index buffer format. */
+        /** gl.UNSIGNED_BYTE */
+        const INDEX_FMT_UINT8: number;
+        /** gl.UNSIGNED_SHORT */
+        const INDEX_FMT_UINT16: number;
+        /** gl.UNSIGNED_INT */
+        const INDEX_FMT_UINT32: number;
+
+        /** Vertex attribute semantic. */
+        const ATTR_POSITION: string;
+        const ATTR_NORMAL: 'a_normal';
+        const ATTR_TANGENT: 'a_tangent';
+        const ATTR_BITANGENT: 'a_bitangent';
+        const ATTR_WEIGHTS: 'a_weights';
+        const ATTR_JOINTS: 'a_joints';
+        const ATTR_COLOR: 'a_color';
+        const ATTR_COLOR0: 'a_color0';
+        const ATTR_COLOR1: 'a_color1';
+        const ATTR_UV: 'a_uv';
+        const ATTR_UV0: 'a_uv0';
+        const ATTR_UV1: 'a_uv1';
+        const ATTR_UV2: 'a_uv2';
+        const ATTR_UV3: 'a_uv3';
+        const ATTR_UV4: 'a_uv4';
+        const ATTR_UV5: 'a_uv5';
+        const ATTR_UV6: 'a_uv6';
+        const ATTR_UV7: 'a_uv7';
+
+        /** Blend equations. */
+        /** gl.FUNC_ADD */
+        const BLEND_FUNC_ADD: number;
+        /** gl.FUNC_SUBTRACT */
+        const BLEND_FUNC_SUBTRACT: number;
+        /** gl.FUNC_REVERSE_SUBTRACT */
+        const BLEND_FUNC_REVERSE_SUBTRACT: number;
+
+        /** Blend modes. */
+        /** gl.ZERO */
+        const BLEND_ZERO: number;
+        /** gl.ONE */
+        const BLEND_ONE: number;
+        /** gl.SRC_COLOR */
+        const BLEND_SRC_COLOR: number;
+        /** gl.ONE_MINUS_SRC_COLOR */
+        const BLEND_ONE_MINUS_SRC_COLOR: number;
+        /** gl.DST_COLOR */
+        const BLEND_DST_COLOR: number;
+        /** gl.ONE_MINUS_DST_COLOR */
+        const BLEND_ONE_MINUS_DST_COLOR: number;
+        /** gl.SRC_ALPHA */
+        const BLEND_SRC_ALPHA: number;
+        /** gl.ONE_MINUS_SRC_ALPHA */
+        const BLEND_ONE_MINUS_SRC_ALPHA: number;
+        /** gl.DST_ALPHA */
+        const BLEND_DST_ALPHA: number;
+        /** gl.ONE_MINUS_DST_ALPHA */
+        const BLEND_ONE_MINUS_DST_ALPHA: number;
+        /** gl.CONSTANT_COLOR */
+        const BLEND_CONSTANT_COLOR: number;
+        /** gl.ONE_MINUS_CONSTANT_COLOR */
+        const BLEND_ONE_MINUS_CONSTANT_COLOR: number;
+        /** gl.CONSTANT_ALPHA */
+        const BLEND_CONSTANT_ALPHA: number;
+        /** gl.ONE_MINUS_CONSTANT_ALPHA */
+        const BLEND_ONE_MINUS_CONSTANT_ALPHA: number;
+        /** gl.SRC_ALPHA_SATURATE */
+        const BLEND_SRC_ALPHA_SATURATE: number;
+
+        /** Cull modes. */
+        const CULL_NONE: number;
+        const CULL_FRONT: number;
+        const CULL_BACK: number;
+        const CULL_FRONT_AND_BACK: number;
+
+        class VertexFormat { }
+        class IndexBuffer { }
+        class VertexBuffer { }
+        class Program {
+            id: number;
+            constructor(device: any, options: any);
+            link(): void;
+            destroy(): void;
+        }
+        class Texture { }
+        class Texture2D { }
+        class TextureCube { }
+        class RenderBuffer { }
+        class FrameBuffer { }
+        class Device { }
+
+        function attrTypeBytes(attyType: any): number;
+        function glFilter(gl: WebGLContext, filter: any, mipFilter: any): any;
+        function glTextureFmt(fmt: any): any;
+    }
+
     namespace renderer {
         const _forward: renderEngine.ForwardRenderer;
 
