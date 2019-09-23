@@ -629,6 +629,18 @@ declare namespace cc {
     }
 
     /** Version >= 2.1.3 */
+    class Material extends Asset {
+        hash: string;
+        _texIds: any;
+        effect: renderer.Effect;
+        _effect: renderer.Effect;
+        _mainTech: renderer.Technique;
+        _texture: Texture2D | null;
+        constructor(persist?: boolean);
+        updateHash(): void;
+    }
+
+    /** Version >= 2.1.3 */
     namespace gfx {
         /** Buffer usage. */
         /** gl.STATIC_DRAW */
