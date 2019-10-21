@@ -346,6 +346,26 @@ declare namespace cc {
         const VERTEX_ATTRIB_TEX_COORDS: number;
     }
 
+    /** Version >= 2.2.0 */
+    interface Assembler {
+        init(renderComp: any): void;
+        register(renderCompCtor: any, assember: any): void;
+        updateRenderData(comp: any): void;
+        fillBuffers(comp: any, renderer: any): void;
+        getVfmt(): any;
+    }
+
+    /** Version >= 2.2.0 */
+    interface Assembler2D extends Assembler {
+        verticesFloats: number;
+        initData(): void;
+        initLocal(): void;
+        updateColor(comp: any, color: Color): void;
+        getBuffer(): any;
+        updateWorldVerts(comp: any): void;
+        packToDynamicAtlas(comp: any, frame: any): void;
+    }
+
     interface Director {
         runSceneImmediate(
             scene: Scene,
